@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Date Converter - Gregorian | Jalali | Hijri</title>
+
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-white to-purple-50 text-gray-800 min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-3xl bg-white rounded-2xl shadow-2xl p-8 space-y-6 border border-purple-200 transform transition hover:shadow-3xl duration-300 ease-in-out">
+    
+    <h1 class="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 mb-8">Date Converter</h1>
+
+    <!-- Inputs -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Gregorian -->
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-purple-700">Gregorian</label>
+        <input type="date" id="gregorian" class="w-full border border-purple-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition" />
+      </div>
+
+      <!-- Jalali -->
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-purple-700">Jalali (Persian)</label>
+        <input type="text" id="jalali" placeholder="YYYY/MM/DD" class="w-full border border-purple-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition" />
+      </div>
+
+      <!-- Hijri -->
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-purple-700">Hijri (Islamic)</label>
+        <input type="text" id="hijri" placeholder="YYYY/MM/DD" class="w-full border border-purple-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition" />
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mt-6">
+      <button onclick="setToday()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg shadow-md transform hover:scale-105 transition-all duration-200">Today</button>
+      <button onclick="copyToClipboard('jalali')" class="px-6 py-3 bg-white border border-purple-400 hover:bg-purple-50 text-purple-700 font-medium rounded-lg shadow hover:shadow-lg transition-all duration-200">Copy Jalali</button>
+      <button onclick="copyToClipboard('hijri')" class="px-6 py-3 bg-white border border-purple-400 hover:bg-purple-50 text-purple-700 font-medium rounded-lg shadow hover:shadow-lg transition-all duration-200">Copy Hijri</button>
+    </div>
+
+    <!-- Error Message -->
+    <p id="error" class="text-red-500 text-center mt-4 hidden"></p>
+
+    <!-- Footer -->
+    <div class="text-center text-sm text-gray-500 mt-8">Made with Amir Hossein Gholami</div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
